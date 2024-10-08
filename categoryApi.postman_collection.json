@@ -1,38 +1,38 @@
 {
 	"info": {
-		"_postman_id": "b547df9b-a765-4ae7-8207-e14fbfc033ba",
-		"name": "recipeAPI",
+		"_postman_id": "e4665f07-c9b8-47e5-8551-a2d8120a1533",
+		"name": "categoryApi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "38098617"
 	},
 	"item": [
 		{
-			"name": "GET_RECETTES",
+			"name": "GET_CATEGORYS",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/recipes",
+					"raw": "http://localhost:3000/category",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"recipes"
+						"category"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "POST_RECETTES",
+			"name": "POST_CATEGORYS",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " { \"titre\": \"Chocolate\",\r\n        \"type\": \"Entrée\",\r\n        \"ingredient\": \"Flour, cocoa powder, sugar, eggs, butter\",\r\n        \"category_id\": 2\r\n    \r\n    }",
+					"raw": "{\r\n    \r\n        \"name\": \"entree\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -40,27 +40,27 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/recipes",
+					"raw": "http://localhost:3000/category",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"recipes"
+						"category"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "PUT_RECETTES",
+			"name": "PUT_CATEGORYS",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \r\n        \"titre\": \"Chocolate Cake\",\r\n        \"type\": \"dessert\",\r\n        \"ingredient\": \"Flour, cocoa powder, sugar, eggs, butter\",\r\n        \"category_id\": 3\r\n     }",
+					"raw": " {\r\n        \r\n        \"name\": \"dessert\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -68,28 +68,28 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/recipes/3",
+					"raw": "http://localhost:3000/category/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"recipes",
-						"3"
+						"category",
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE_RECETTES",
+			"name": "DELETE_CATEGORYS",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n        \"type\": \"dessert\",\r\n        \"titre\": \"chocolat\",\r\n        \"ingredient\": \"sucre,glacee\",\r\n        \"category_id\": 4\r\n    }",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -97,15 +97,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/recipes/4",
+					"raw": "http://localhost:3000/category/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"recipes",
-						"4"
+						"category",
+						"1"
 					]
 				}
 			},

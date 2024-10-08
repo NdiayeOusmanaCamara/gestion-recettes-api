@@ -11,7 +11,7 @@ const corsOptions = {
 
 const app = express();
 app.use(cors("*", corsOptions));
-const port = 3070;
+const port = 3000;
 app.use(bodyParser.json());
 app.use(recipeRoutes);
 app.use(categoryRoutes);

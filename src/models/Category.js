@@ -5,13 +5,13 @@ class Category {
     const results = await db.query("SELECT * FROM categorys");
     return results;
   }
-  static async checkCategory(name) {
-    const [rows] = await db.query(
-      "SELECT COUNT(*) as count FROM categorys WHERE name = ?",
-      [name],
-    );
-    return rows[0].count;
-  }
+  // static async checkCategory(name) {
+  //   const [rows] = await db.query(
+  //     "SELECT COUNT(*) as count FROM categorys WHERE name = ?",
+  //     [name],
+  //   );
+  //   return rows[0].count;
+  // }
 
   static async getCategoryByTitle(name) {
     const [rows] = await db.query("SELECT * FROM categorys WHERE name = ?", [

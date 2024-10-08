@@ -2,14 +2,12 @@
 
 ## Description
 
-Cette API permet de gérer des recettes culinaires en offrant des fonctionnalités CRUD (Créer, Lire, Mettre à jour, Supprimer). Elle est développée avec Express.js et utilise MySQL pour la gestion de la base de données. Le projet comprend des tests unitaires, des outils d'analyse et de formatage de code (ESLint, Prettier), ainsi qu'une containerisation avec Docker pour le déploiement.
+Cette API permet de gérer des recettes culinaires en offrant des fonctionnalités CRUD (Créer, Lire, Mettre à jour, Supprimer). Elle est développée avec Express.js et utilise MySQL pour la gestion de la base de données. Le projet comprend des tests unitaires, des outils d'analyse et de formatage de code (ESLint, Prettier).
 
 
 ## Objectifs
 - Développer et tester une API RESTful avec Express.js et MySQL.
 - Intégrer des outils d'analyse et de formatage de code.
-- Containeriser l'API avec Docker pour faciliter le déploiement.
-- Déployer l'API dans un environnement conteneurisé via DockerHub.
 ## prérequis
 
 Avant de démarrer, assurez-vous d'avoir installé les logiciels suivants :
@@ -31,13 +29,13 @@ Avant de démarrer, assurez-vous d'avoir installé les logiciels suivants :
 1. Clonez le dépôt sur votre machine locale :
 
 ```
-git clone https://github.com/Mangassouba/gestion-recipes-api.git
+git clone https://github.com/NdiayeOusmanaCamara/gestion-recettes-api.git
 ```
 
 2. Accédez au répertoire du projet :
 
 ```
-cd gestion-recipes-api
+cd gestion-recettes-api
 ```
 
 3. Installez les dépendances du projet :
@@ -45,13 +43,12 @@ cd gestion-recipes-api
 ```
 npm install
 ```
-
+L'API sera accessible à `http://localhost:3000`
 ## Endpoints de l'API
-
+## Recette
 ## GET /recipes
 
-- Description : Récupère toutes les recettes.
-
+- Description : Récupère toutes les recettes. `http://localhost:3000/recipes`
 - Réponse
 
         [
@@ -73,7 +70,7 @@ npm install
 
 ## POST /recipes
 
-- Description : Crée une nouvelle recette.
+- Description : Crée une nouvelle recette. `http://localhost:3000/recipes`
 
 - Corps de la requête :
 
@@ -98,7 +95,7 @@ npm install
 
 ## PUT /recipes/id
 
-- Description : Met à jour une recette existante.
+- Description : Met à jour une recette existante. `http://localhost:3000/recipes/4`
 
 - Corps de la requête :
 
@@ -120,7 +117,7 @@ npm install
 
 ## DELETE /recipes/id
 
-- Description : Supprime une recette par ID.
+- Description : Supprime une recette par ID. `http://localhost:3000/recipes/2`
 - Réponse :
 
 ```
@@ -128,11 +125,38 @@ npm install
   "message": "Recette supprimée avec succès"
 }
 ```
+## les tests unitaires
 
+L'application utilise Jasmine pour les tests unitaires. Pour exécuter les tests, utilisez la commande suivante :
+
+```
+npm test
+```
+Exemple:
+
+![](/src/assets/images/img%20test.JPG)
+
+Les tests incluent la vérification des fonctionnalités principales telles que la création, la récupération, la mise à jour, et la suppression des recettes.
+
+
+
+## Analyse et formatage de code
+
+L'analyse statique du code s'effectue à l'aide d'ESLint, tandis que le formatage est assuré par Prettier. Ces outils sont configurés pour être intégrés dans votre pipeline de développement afin de garantir un code propre et homogène
+
+## Exécuter l'analyse du code :
+
+```
+npm run lint
+```
+## Exécuter le formatage automatique :
+```
+npm run format
+```
+
+## Documentation et Collection Postman
+- **Exporter la collection recette** :`recetteApi.postman_collection`
+- **Exporter la collection category** :`categoryApi.postman_collection`
+- **Importer dans Postman** et exécuter les requêtes.
 ## Auteur
-
-[Hama Houllah Mangassouba](https://github.com/Mangassouba)
-
-Contributeur
-
 [N'Diaye Ousmane Camara](https://github.com/NdiayeOusmanaCamara)

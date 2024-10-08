@@ -5,13 +5,13 @@ class Recipe {
     const results = await db.query("SELECT * FROM recipes");
     return results;
   }
-  static async checkRecipe(titre) {
-    const [rows] = await db.query(
-      "SELECT COUNT(*) as count FROM recipes WHERE titre = ?",
-      [titre],
-    );
-    return rows[0].count;
-  }
+  // static async checkRecipe(titre) {
+  //   const [rows] = await db.query(
+  //     "SELECT COUNT(*) as count FROM recipes WHERE titre = ?",
+  //     [titre],
+  //   );
+  //   return rows[0].count;
+  // }
 
   static async getRecipeByTitle(titre) {
     const [rows] = await db.query("SELECT * FROM recipes WHERE titre = ?", [
