@@ -1,57 +1,138 @@
-
-# API de Gestion des Recettes
+## Gestion de Recettes - Application Node.js
 
 ## Description
 
-L'application de gestion de recettes permet aux utilisateurs d'ajouter, modifier, supprimer et afficher des recettes de cuisine.
-l'application a été developpeée en utilisant vuejs 3 avec la compostion  API et pinia et bootstrap pour styliser l'interface utilisateur et doit etre deployée sur vercel, conteneurisée avec Docker, et publiée sur Docker Hub.
+Cette API permet de gérer des recettes culinaires en offrant des fonctionnalités CRUD (Créer, Lire, Mettre à jour, Supprimer). Elle est développée avec Express.js et utilise MySQL pour la gestion de la base de données. Le projet comprend des tests unitaires, des outils d'analyse et de formatage de code (ESLint, Prettier), ainsi qu'une containerisation avec Docker pour le déploiement.
 
-## Fonctionnalités
 
-- Ajout de Recettes : Les utilisateurs peuvent ajouter de nouvelles recettes en spécifiant le titre, les ingrédients, et le type de recette
+## Objectifs
+- Développer et tester une API RESTful avec Express.js et MySQL.
+- Intégrer des outils d'analyse et de formatage de code.
+- Containeriser l'API avec Docker pour faciliter le déploiement.
+- Déployer l'API dans un environnement conteneurisé via DockerHub.
+## prérequis
 
-- Modification de Recettes : Les utilisateurs peuvent modifier les recettes existantes.
+Avant de démarrer, assurez-vous d'avoir installé les logiciels suivants :
 
-- Suppression de Recettes : Les utilisateurs peuvent supprimer des recettes de la liste.
+- Node.js (version 14+)
+- MySQL (version 5.7+)
+- Postman (pour tester l'API)
 
-- Affichage de la Liste des Recettes : Une page permet de visualiser toutes les recettes
+## Technologies Utilisées
 
-- Déploiement sur Vercel : L'application peut être déployée directement sur Vercel pour un accès en ligne.
-
-- Conteneurisation avec Docker : Une image Docker de l'application peut être construite et poussée sur Docker Hub.
-
-## Prérequis
-
-- nodejs
-- vuejs3
-- Git
-- pinia
+- **Node.js** : Plateforme JavaScript côté serveur.
+- **Express** : Framework web pour Node.js.
+- **MySQL** : Système de gestion de base de données relationnelle.
+- **Jasmine** : Framework de tests pour JavaScript.
+- **Postman** : Utilisé pour tester l'API.
 
 ## Installation
 
-- Clonez le repository :
+1. Clonez le dépôt sur votre machine locale :
 
-        https://github.com/Mangassouba/tp-44-gestionRecette.git
- - Accédez au dossier du projet
+```
+git clone https://github.com/Mangassouba/gestion-recipes-api.git
+```
 
-            cd tp-44-gestionRecette
+2. Accédez au répertoire du projet :
 
-- Installez les dépendances :
+```
+cd gestion-recipes-api
+```
 
-        npm install
+3. Installez les dépendances du projet :
 
-- Lancez l'application en mode développement :
+```
+npm install
+```
 
-        npm run dev
+## Endpoints de l'API
 
-## Utilisation
+## GET /recipes
 
-- Naviguez entre les pages de menu via la barre de navigation.
-- Utilisez les formulaires pour ajouter ou modifier des recettes.
-- Visualisez les détails d'une recette en cliquant sur l'icône d'œil.
+- Description : Récupère toutes les recettes.
+
+- Réponse
+
+        [
+                {
+                    "id": 2,
+                    "titre": "Crêpes classiques",
+                    "type": "Dessert",
+                    "ingredient": "250g de farine, 3 ?ufs",
+                    "cartegory_id":"2"
+                },
+                {
+                    "id": 3,
+                    "titre": "Soupe de légumes",
+                    "type": "Entrée",
+                    "ingredient": "3 carottes, 2 pommes de terre",
+                    "cartegory_id":"3"
+                }
+            ]
+
+## POST /recipes
+
+- Description : Crée une nouvelle recette.
+
+- Corps de la requête :
+
+```
+{
+
+"titre": "Salades Césars",
+"type": "Entrée",
+"ingredient": "Laitue, Poulet, Parmesan, Croutons",
+"cartegory_id":"4"
+
+    }
+```
+
+- Reponse:
+
+```
+{
+  "message": "Recette ajouter avec succès"
+}
+```
+
+## PUT /recipes/id
+
+- Description : Met à jour une recette existante.
+
+- Corps de la requête :
+
+          {
+          "titre": "Salade Césars",
+          "type": "Entrée",
+          "ingredient": "Laitue, Poulet, Parmesan, Croutons",
+          "cartegory_id":"1"
+          }
+
+- Réponse :
+
+```
+
+{
+  "message": "Recette mise à jour avec succès"
+}
+```
+
+## DELETE /recipes/id
+
+- Description : Supprime une recette par ID.
+- Réponse :
+
+```
+{
+  "message": "Recette supprimée avec succès"
+}
+```
 
 ## Auteur
-Hama Houllah Mangasouba
 
-https://github.com/Mangassouba
+[Hama Houllah Mangassouba](https://github.com/Mangassouba)
 
+Contributeur
+
+[N'Diaye Ousmane Camara](https://github.com/NdiayeOusmanaCamara)
